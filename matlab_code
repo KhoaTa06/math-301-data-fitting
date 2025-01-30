@@ -1,1 +1,42 @@
+% Scatter Plot Code
+%'Copy The Coords To Your Clipboard Then Hit Run'
+inputlines = [];
 
+inputlines = clipboard('paste');
+lines = strsplit(inputlines, newline);
+
+data = [];
+for i = 1:length(lines)
+    if ~isempty(strtrim(lines{i}))
+        values = str2num(lines{i});
+        if length(values) == 3
+            data = [data; values];
+        else
+            warning('Skipping invalid line: %s', lines{i});
+        end
+    end
+end
+
+if isempty(data)
+    error('No Valid Points');
+end
+
+x = data(:, 1);
+y = data(:, 2);
+z = data(:, 3);
+
+
+%c = (z - min(z)) / (max(z) - min(z));
+
+figure;
+scatter3(x, y, z, 10, 'c', 'filled');
+grid on;
+xlabel('X');
+ylabel('Y');
+zlabel('Z');
+title('3D Scatter Plot');
+colormap(jet);
+colorbar;
+clim([min(z), max(z)]);
+view(3);
+axis equal;
