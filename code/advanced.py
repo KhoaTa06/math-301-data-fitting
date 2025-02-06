@@ -9,15 +9,23 @@ from tensorflow.keras.layers import Dense
 import matplotlib.pyplot as plt
 
 # Load the dataset
-def load_data(Group_1_Data.txt):
+
+def load_data(file_path):
     """
     Load the dataset from a .txt file.
     Assumes the file has columns x, y, and f(x, y) separated by commas.
     """
-    data = pd.read_csv(Group_1_Data.txt, header=None, names=['x1', 'x2', 'y'])
-    X = data[['x1', 'x2']].values  # First two columns are x1 and x2
-    y = data['y'].values           # Last column is y
-    return X, y
+    try:
+        data = pd.read_csv(file_path, header=None, names=['x1', 'x2', 'y'])
+        X = data[['x1', 'x2']].values  # First two columns are x1 and x2
+        y = data['y'].values           # Last column is y
+        return X, y
+    except FileNotFoundError:
+        print(f"Error: The file '{file_path}' was not found.")
+        exit(1)
+    except Exception as e:
+        print(f"Error loading the dataset: {e}")
+        exit(1)
 
 # Split the dataset into training and testing sets
 def split_data(X, y, test_size=0.2, random_state=42):
@@ -81,7 +89,8 @@ def neural_network(X_train, X_test, y_train, y_test, epochs=100, batch_size=32):
     ])
     
     model.compile(optimizer='adam', loss='mse')
-    model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=0)
+    print("\nTraining Neural Network...")
+    model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=1)
     
     y_pred = model.predict(X_test).flatten()
     
@@ -98,7 +107,7 @@ def neural_network(X_train, X_test, y_train, y_test, epochs=100, batch_size=32):
 # Main function
 def main():
     # Load and split the data
-    file_path = "data.txt"  # Replace with your dataset file path
+    file_path = "Group_1_Data.txt"  # Replace with your dataset file path
     X, y = load_data(file_path)
     X_train, X_test, y_train, y_test = split_data(X, y)
     
