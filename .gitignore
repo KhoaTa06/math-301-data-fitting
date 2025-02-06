@@ -29,5 +29,4 @@ env/
 # Testing
 .pytest_cache/
 
-/
-.DS_Store
+
