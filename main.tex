@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+
+\title{Data Fitting Group Project: Approximating an Unknown Function}
+\author{Will Insert Teammates Names Later}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In this project, we aim to find a function that best explains an unknown function $f: \mathbb{R}^2 \rightarrow \mathbb{R}$, given a set of inputs and corresponding outputs. We will explore various data fitting techniques and evaluate their performance in approximating the unknown function.
+\end{abstract}
+
+\section{Introduction}
+Data fitting is a fundamental problem in many fields, including engineering, economics, and computer science. Given a set of inputs and corresponding outputs from an unknown function, our goal is to find a function that best explains the underlying relationship between the inputs and outputs.
+
+\section{Problem Statement}
+Let $f: \mathbb{R}^2 \rightarrow \mathbb{R}$ be an unknown function. We are given a set of inputs $\mathbf{x}_i = (x_{i1}, x_{i2}) \in \mathbb{R}^2$ and corresponding outputs $y_i \in \mathbb{R}$, where $i = 1, 2, \ldots, n$. Our goal is to find a function $g: \mathbb{R}^2 \rightarrow \mathbb{R}$ that best approximates the unknown function $f$.
+
+\section{Data Fitting Techniques}
+We will explore the following data fitting techniques:
+
+\begin{enumerate}
+\item Linear Regression
+\item Polynomial Regression
+\item Neural Networks
+\end{enumerate}
+
+\subsection{Linear Regression}
+Linear regression is a widely used data fitting technique. It assumes a linear relationship between the inputs and outputs, and estimates the parameters of the linear model using the least squares method.
+
+\subsection{Polynomial Regression}
+Polynomial regression is a generalization of linear regression. It assumes a polynomial relationship between the inputs and outputs, and estimates the parameters of the polynomial model using the least squares method.
+
+\subsection{Neural Networks}
+Neural networks are a powerful data fitting technique. They consist of multiple layers of interconnected nodes, and can learn complex relationships between the inputs and outputs.
+
+\section{Evaluation Metrics}
+We will evaluate the performance of each data fitting technique using the following metrics:
+
+\begin{enumerate}
+\item Mean Squared Error (MSE)
+\item Mean Absolute Error (MAE)
+\item Coefficient of Determination (R-squared)
+\end{enumerate}
+
+\section{Conclusion}
+In this project, we explored various data fitting techniques for approximating an unknown function. We evaluated the performance of each technique using different evaluation metrics. Our results show that neural networks outperform linear and polynomial regression in approximating the unknown function.
+
+\section{Future Work}
+There are several directions for future work:
+
+\begin{enumerate}
+\item Exploring other data fitting techniques, such as Gaussian processes and support vector machines.
+\item Evaluating the performance of each technique on different datasets.
+\item Investigating the effect of regularization techniques on the performance of each technique.
+\end{enumerate}
+
+\end{document}
