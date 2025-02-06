@@ -9,12 +9,12 @@ from tensorflow.keras.layers import Dense
 import matplotlib.pyplot as plt
 
 # Load the dataset
-def load_data(Group1_Data.txt):
+def load_data(Group_1_Data.txt):
     """
     Load the dataset from a .txt file.
     Assumes the file has columns x, y, and f(x, y) separated by commas.
     """
-    data = pd.read_csv(file_path, header=None, names=['x1', 'x2', 'y'])
+    data = pd.read_csv(Group_1_Data.txt, header=None, names=['x1', 'x2', 'y'])
     X = data[['x1', 'x2']].values  # First two columns are x1 and x2
     y = data['y'].values           # Last column is y
     return X, y
