@@ -1,4 +1,3 @@
-Here’s a professional and concise `README.md` file for your project. It includes a brief description of the project, as well as a tutorial on setting up the virtual environment and installing dependencies.
 
 ---
 
